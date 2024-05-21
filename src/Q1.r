@@ -16,7 +16,8 @@ i <- 8
 j <- 6
 k <- 3
 
-# Remove rows `k + 1`, `j + 1`, `i + 1`, `jk + 1`, `ij + 1`, `ik + 1`, `ijk + 1` en `i + j + k + 1`
+# Remove rows `k + 1`, `j + 1`, `i + 1`, `jk + 1`, `ij + 1`,
+# `ik + 1`, `ijk + 1` en `i + j + k + 1`
 data <- data[-c(k + 1, j + 1, i + 1, j * k + 1, i * j + 1, i * k + 1, i * j * k + 1), ]
 
 print("Rows removed")
@@ -25,12 +26,19 @@ print("Rows removed")
 # Plot the distribution of the 'los' variable
 plot <- ggplot(data, aes(x = los)) +
   geom_histogram(color = "black", fill = "white") +
-  labs(x = "Length of Stay (days)", y = "Frequency", title = "Distribution of Length of Stay")
+  labs(
+    x = "Length of Stay (days)",
+    y = "Frequency",
+    title = "Distribution of Length of Stay"
+  )
 
 # Print the plot
 print(plot)
 
-qqplot <- ggqqplot(data$los, ylab = "Length of Stay (days)", xlab = "Theoretical Quantiles")
+qqplot <- ggqqplot(data$los,
+  ylab = "Length of Stay (days)",
+  xlab = "Theoretical Quantiles"
+)
 print(qqplot)
 
 # Perform the Shapiro-Wilk normality test
