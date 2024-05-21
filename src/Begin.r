@@ -24,8 +24,8 @@ print("Rows removed")
 
 # Plot the distribution of the 'los' variable
 plot <- ggplot(data, aes(x = los)) +
-    geom_histogram(color = "black", fill = "white") +
-    labs(x = "Length of Stay (days)", y = "Frequency", title = "Distribution of Length of Stay")
+  geom_histogram(color = "black", fill = "white") +
+  labs(x = "Length of Stay (days)", y = "Frequency", title = "Distribution of Length of Stay")
 
 # Print the plot
 print(plot)
@@ -55,32 +55,60 @@ data$los_hyperbolic_arcsine <- log(data$los + sqrt(data$los^2 + 1))
 
 # Plot the distribution of the new variables
 plot_square_root <- ggplot(data, aes(x = los_square_root)) +
-    geom_histogram(color = "black", fill = "white") +
-    labs(x = "Square Root of Length of Stay", y = "Frequency", title = "Distribution of Square Root of Length of Stay")
+  geom_histogram(color = "black", fill = "white") +
+  labs(
+    x = "Square Root of Length of Stay",
+    y = "Frequency",
+    title = "Distribution of Square Root of Length of Stay"
+  )
 
 plot_cube_root <- ggplot(data, aes(x = los_cube_root)) +
-    geom_histogram(color = "black", fill = "white") +
-    labs(x = "Cube Root of Length of Stay", y = "Frequency", title = "Distribution of Cube Root of Length of Stay")
+  geom_histogram(color = "black", fill = "white") +
+  labs(
+    x = "Cube Root of Length of Stay",
+    y = "Frequency",
+    title = "Distribution of Cube Root of Length of Stay"
+  )
 
 plot_nat_log <- ggplot(data, aes(x = los_nat_log)) +
-    geom_histogram(color = "black", fill = "white") +
-    labs(x = "Natural Logarithm of Length of Stay", y = "Frequency", title = "Distribution of Natural Logarithm of Length of Stay")
+  geom_histogram(color = "black", fill = "white") +
+  labs(
+    x = "Natural Logarithm of Length of Stay",
+    y = "Frequency",
+    title = "Distribution of Natural Logarithm of Length of Stay"
+  )
 
 plot_log10 <- ggplot(data, aes(x = los_log10)) +
-    geom_histogram(color = "black", fill = "white") +
-    labs(x = "Base 10 Logarithm of Length of Stay", y = "Frequency", title = "Distribution of Base 10 Logarithm of Length of Stay")
+  geom_histogram(color = "black", fill = "white") +
+  labs(
+    x = "Base 10 Logarithm of Length of Stay",
+    y = "Frequency",
+    title = "Distribution of Base 10 Logarithm of Length of Stay"
+  )
 
 plot_inverse <- ggplot(data, aes(x = los_inverse)) +
-    geom_histogram(color = "black", fill = "white") +
-    labs(x = "Inverse of Length of Stay", y = "Frequency", title = "Distribution of Inverse of Length of Stay")
+  geom_histogram(color = "black", fill = "white") +
+  labs(
+    x = "Inverse of Length of Stay",
+    y = "Frequency",
+    title = "Distribution of Inverse of Length of Stay"
+  )
 
 plot_arcsine <- ggplot(data, aes(x = los_arcsine)) +
-    geom_histogram(color = "black", fill = "white") +
-    labs(x = "Arcsine of Length of Stay", y = "Frequency", title = "Distribution of Arcsine of Length of Stay")
+  geom_histogram(color = "black", fill = "white") +
+  labs(
+    x = "Arcsine of Length of Stay",
+    y = "Frequency",
+    title = "Distribution of Arcsine of Length of Stay"
+  )
 
 plot_hyperbolic_arcsine <- ggplot(data, aes(x = los_hyperbolic_arcsine)) +
-    geom_histogram(color = "black", fill = "white") +
-    labs(x = "Hyperbolic Arcsine of Length of Stay", y = "Frequency", title = "Distribution of Hyperbolic Arcsine of Length of Stay")
+  geom_histogram(color = "black", fill = "white") +
+  labs(
+    x = "Hyperbolic Arcsine of Length of Stay",
+    y = "Frequency",
+    title = "Distribution of Hyperbolic Arcsine of Length of Stay"
+  )
 
 # Print the plots
 print(plot_square_root)
@@ -92,25 +120,46 @@ print(plot_arcsine)
 print(plot_hyperbolic_arcsine)
 
 # Generate QQ plots for the transformed variables
-qqplot_square_root <- ggqqplot(data$los_square_root, ylab = "Square Root of Length of Stay", xlab = "Theoretical Quantiles")
+qqplot_square_root <- ggqqplot(data$los_square_root,
+  ylab = "Square Root of Length of Stay",
+  xlab = "Theoretical Quantiles"
+)
 print(qqplot_square_root)
 
-qqplot_cube_root <- ggqqplot(data$los_cube_root, ylab = "Cube Root of Length of Stay", xlab = "Theoretical Quantiles")
+qqplot_cube_root <- ggqqplot(data$los_cube_root,
+  ylab = "Cube Root of Length of Stay",
+  xlab = "Theoretical Quantiles"
+)
 print(qqplot_cube_root)
 
-qqplot_nat_log <- ggqqplot(data$los_nat_log, ylab = "Natural Logarithm of Length of Stay", xlab = "Theoretical Quantiles")
+qqplot_nat_log <- ggqqplot(data$los_nat_log,
+  ylab = "Natural Logarithm of Length of Stay",
+  xlab = "Theoretical Quantiles"
+)
 print(qqplot_nat_log)
 
-qqplot_log10 <- ggqqplot(data$los_log10, ylab = "Base-10 Logarithm of Length of Stay", xlab = "Theoretical Quantiles")
+qqplot_log10 <- ggqqplot(data$los_log10,
+  ylab = "Base-10 Logarithm of Length of Stay",
+  xlab = "Theoretical Quantiles"
+)
 print(qqplot_log10)
 
-qqplot_inverse <- ggqqplot(data$los_inverse, ylab = "Inverse of Length of Stay", xlab = "Theoretical Quantiles")
+qqplot_inverse <- ggqqplot(data$los_inverse,
+  ylab = "Inverse of Length of Stay",
+  xlab = "Theoretical Quantiles"
+)
 print(qqplot_inverse)
 
-qqplot_arcsine <- ggqqplot(data$los_arcsine, ylab = "Arcsine of Scaled Length of Stay", xlab = "Theoretical Quantiles")
+qqplot_arcsine <- ggqqplot(data$los_arcsine,
+  ylab = "Arcsine of Scaled Length of Stay",
+  xlab = "Theoretical Quantiles"
+)
 print(qqplot_arcsine)
 
-qqplot_hyperbolic_arcsine <- ggqqplot(data$los_hyperbolic_arcsine, ylab = "Hyperbolic Arcsine of Length of Stay", xlab = "Theoretical Quantiles")
+qqplot_hyperbolic_arcsine <- ggqqplot(data$los_hyperbolic_arcsine,
+  ylab = "Hyperbolic Arcsine of Length of Stay",
+  xlab = "Theoretical Quantiles"
+)
 print(qqplot_hyperbolic_arcsine)
 
 # Perform the Shapiro-Wilk normality test
