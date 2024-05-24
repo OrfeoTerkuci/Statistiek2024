@@ -1,16 +1,30 @@
-# Statistiek2024
+# Statistics 2024
 
-Variabelen:
+Data can be found in `assets/heart.csv`.
 
-1. *`id`*: identificatienummer
-2. *`age`*: leeftijd van de patiënt bij ziekenhuisopname
-3. *`gender`*: geslacht van de patiënt: ‘0’ = man, ‘1’ = vrouw
-4. *`hr`*: initiële hartslag: slagen per minuut
+Variables:
+
+1. *`id`*: identification number
+2. *`age`*: age of the patient at hospital admission
+3. *`gender`*: gender of the patient: ‘0’ = man, ‘1’ = woman
+4. *`hr`*: initial heart rate: beats per minute
 5. *`bmi`*: BodyMassIndex: kg/m2
-6. *`cvd`*: geschiedenis van hart- en vaatziekten: ‘0’ = nee, ‘1’ = ja
-7. *`sho`*: cardiogene shock: ‘0’ = nee, ‘1’ = ja
-8. *`mitype`*: type van hartinfarct (pathologisch): ‘0’ = geen aanwezigheid van Q-golflengtes, ‘1’ = aanwezigheid van Q-golflengtes
-9. **`los`*: duur van het ziekenhuisverblijf, in dagen*
-10. *`dstat`*: ontslagstatus uit het ziekenhuis: ‘0’ =levend, ‘1’ = dood
-11. *`lenfol`*: totale duur van de opvolging: aantal dagen vanaf ziekenhuisopname tot de datum van de laatste opvolging
-12. *`fstat`*: status bij de laatste opvolging: ‘0’ =levend, ‘1’ = dood.
+6. *`cvd`*: history of cardiovascular disease: '0' = no, '1' = yes
+7. *`sho`*: cardiogenic shock: '0' = no, '1' = yes
+8. *`mitype`*: type of myocardial infarction (pathological): '0' = no presence of Q wavelengths, '1' = presence of Q wavelengths
+9. *`los`*: duration of hospital stay, in days
+10. *`dstat`*: hospital discharge status: '0' = alive, '1' = dead
+11. *`lenfol`*: total duration of follow-up: number of days from hospital admission to the date of the last follow-up
+12. *`fstat`*: status at last follow-up: '0' = alive, '1' = dead.
+
+## Questions
+
+1. Study and discuss the distribution of the variable separately. Discuss appropriate graphics for this purpose performances. Also formally check whether the data is normally distributed. If this is not the case, in what way do the data deviate from normally distributed facts. Can you transform the data into normally distributed data? Discuss
+    - Code for this question is in `src/Q1.r`
+2. Check whether there is a connection between the type of myocardial infarction and the discharge status from the hospital after admission. Perform an appropriate test.
+    - Code for this question is in `src/Q2.r`
+3. Can you predict the BMI from the patient's age? Answer this question thoroughly
+and as complete as possible.
+    - Code for this question is in `src/Q3.r`
+
+All the graphs used in the `Report.pdf` can be found in `assets/graphs`. There are two subfolders, one for the graphs of the first two questions regarding the `los` variable, and one for the last question regarding the connection between `age` and `bmi`.
