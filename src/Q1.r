@@ -1,4 +1,4 @@
-# Load the necessary library
+# Load the necessary libraries
 library(ggplot2)
 library(stats)
 library(ggpubr)
@@ -47,7 +47,6 @@ sd_los <- sd(data$los, na.rm = TRUE)
 ks_result <- ks.test(data$los, "pnorm", mean_los, sd_los)
 print(ks_result)
 
-EPSILON <- 1e-6
 # Scale oldvar to fit in [-1, 1]
 data$los_scaled <- 2 * (data$los - min(data$los, na.rm = TRUE)) / (max(data$los, na.rm = TRUE) - min(data$los, na.rm = TRUE)) - 1
 

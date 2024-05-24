@@ -1,8 +1,3 @@
-# Ga na of er een verband is tussen het type hartinfarct en
-# de ontslagstatus uit het ziekenhuis
-# na opname. Voer een gepaste test uit
-
-# Lees de data in
 library(readr)
 library(ggpubr)
 
