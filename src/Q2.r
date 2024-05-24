@@ -5,8 +5,6 @@
 # Lees de data in
 library(readr)
 library(ggpubr)
-# Define the file path
-file_path <- "assets/heart.csv"
 
 # Read the CSV file
 data <- read.csv(file = file.choose(), header = TRUE, sep = ";")

@@ -3,8 +3,6 @@ library(ggplot2)
 library(stats)
 library(ggpubr)
 library(readr)
-# Define the file path
-file_path <- "assets/heart.csv"
 
 # Read the CSV file
 data <- read.csv(file = file.choose(), header = TRUE, sep = ";")

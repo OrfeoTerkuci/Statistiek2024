@@ -5,8 +5,6 @@
 # Lees de data in
 library(readr)
 library(ggpubr)
-# Define the file path
-file_path <- "assets/heart.csv"
 
 # Read the CSV file
 data <- read.csv(file = file.choose(), header = TRUE, dec = ",", sep = ";")
@@ -35,11 +33,24 @@ print(cor.test(data$age, data$bmi, method = c("kendall")))
 
 print(cor.test(data$age, data$bmi, method = c("spearman")))
 
-# Generate a scatter plot of bmi and age
 
-scatter <- ggscatter(data, x = "age", y = "bmi", 
-                     add = "reg.line", conf.int = TRUE, 
-                     cor.coef = TRUE, cor.method = "pearson",
-                     xlab = "Age", ylab = "BMI")
+linear <- lm(data$bmi ~ data$age, data)
 
-print(scatter)
+print(summary(linear))
+
+plot(data$age, data$bmi,
+  main = "Scatter plot of age and bmi",
+  xlab = "Age",
+  ylab = "BMI"
+)
+
+abline(linear, col = "red")
+
+# QQ plot of the residuals
+
+residuals_plot <- ggqqplot(linear$residuals,
+  ylab = "Residuals",
+  xlab = "Theoretical Quantiles"
+)
+
+print(residuals_plot)
